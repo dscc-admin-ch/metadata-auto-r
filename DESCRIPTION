@@ -1,0 +1,25 @@
+Package: fso.metadata
+Type: Package
+Title: Metadata Auto R
+Version: 0.0.1
+Date: 2021-22-10
+Authors@R: person("Pauline", "Maury Laribiere", email = "pauline.maury-laribiere@bfs.admin.ch", role = c("aut", "cre"))
+Author: Pauline Maury Laribiere [aut, cre],
+Maintainer: Pauline Maury Laribiere <pauline.maury-laribiere@bfs.admin.ch>
+Description: This package aims to simplify the access to the Swiss Federal Statistical Office metadata. Following the implementation in the interoperability platform and the SIS portal, the APIs are made available here in R. This public library is made available for the internal FSO staff, the federal administration and for external actors.
+Depends: R (>= 3.1.0)
+License: GPL (>= 2)
+Encoding: UTF-8
+URL: https://renkulab.io/gitlab/dscc/metadata-auto-r-library
+LazyData: true
+Imports:
+  data.table,
+  dplyr,
+  glue, 
+  httr, 
+  jsonlite,
+  methods,
+  rsdmx,
+  stringr,
+  testthat
+RoxygenNote: 7.1.1

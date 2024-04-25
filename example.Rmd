@@ -1,0 +1,56 @@
+---
+title: "Examples R Markdown"
+author: "Pauline Maury Laribière"
+date: "21/10/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Installation
+
+You can install the library with
+
+```{r install}
+install.packages("remotes")
+remotes::install_gitlab("DSCC/fso-metadata")
+```
+
+then at the beginning of your R script, you will need to 
+```{r library}
+library("fso.metadata")
+```
+
+
+# Available everywhere with the interoperability plateform (i14y)
+
+## Code list
+
+```{r codelist, echo=FALSE}
+get_codelist(identifier='CL_NOGA_SECTION', language='de')
+```
+
+
+## Nomenclature
+```{r , echo=FALSE}
+my_filters <- list(
+  'AF_ACTIVE'= list("0"),
+  'AFC_ISCO_REDUCED_LIST' = list("1")
+)
+```
+
+
+```{r , echo=FALSE}
+res <- get_nomenclature_one_level(identifier='HCL_CH_ISCO_19_PROF', filters=my_filters, level_number=2, language='fr')
+head(res)
+```
+
+```{r , echo=FALSE}
+res <- get_nomenclature_multiple_levels(identifier='HCL_CH_ISCO_19_PROF', filters=my_filters, level_from=2, level_to=5, language='de')
+res
+```
+
+
+
